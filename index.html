@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Creator Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="credits">
+            <h3>Créditos</h3>
+            <a href="https://instagram.com/el_wawin_" target="_blank">
+                <i class="fab fa-instagram"></i> Sígueme en Instagram
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="animate-title">QR Creator Pro</h1>
+        
+        <div class="qr-form">
+            <textarea id="qr-text" placeholder="Escribe tu texto aquí..."></textarea>
+            <input type="file" id="qr-image" accept="image/*">
+            <label for="qr-image" class="custom-file-upload">
+                <i class="fas fa-image"></i> Seleccionar Imagen
+            </label>
+            <button onclick="generateQR()" class="generate-btn">
+                <span>Generar QR</span>
+            </button>
+        </div>
+
+        <div id="qr-result" class="qr-result">
+            <div id="qr-code"></div>
+            <div class="action-buttons">
+                <button onclick="downloadQR()" class="action-btn">
+                    <i class="fas fa-download"></i> Guardar
+                </button>
+                <button onclick="shareQR()" class="action-btn">
+                    <i class="fas fa-share-alt"></i> Compartir
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
